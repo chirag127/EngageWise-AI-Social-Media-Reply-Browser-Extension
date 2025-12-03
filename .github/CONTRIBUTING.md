@@ -1,131 +1,97 @@
-# Contributing to EngageFlow
+# Contributing to EngageWise-AI-Social-Media-Reply-Browser-Extension
 
-First, thank you for considering contributing to EngageFlow. It's people like you that make this project a world-class tool. We hold our codebase to the highest professional standards to ensure reliability, maintainability, and performance.
+Thank you for considering contributing to **EngageWise-AI-Social-Media-Reply-Browser-Extension**! Your efforts help make this project better for everyone.
 
-This document provides guidelines for contributing. Please read it carefully to ensure a smooth and effective workflow.
+This project adheres to the Apex Technical Authority standards, emphasizing **Zero-Defect, High-Velocity, Future-Proof** development.
 
-## 📜 Core Principles & Code of Conduct
+## 1. Code of Conduct
 
-We operate on a set of core principles that define our engineering culture. For a detailed overview of our architectural standards, tech stack, and AI agent directives, please review the [**AGENTS.md**](./AGENTS.md) file.
+This project and its contributors are bound by the Contributor Covenant Code of Conduct. Please ensure your contributions are respectful and inclusive.
 
-All contributors are expected to adhere to our [Code of Conduct](./CODE_OF_CONDUCT.md) to foster an open, inclusive, and professional environment.
+- [Contributor Covenant Code of Conduct v2.0](https://www.contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html)
 
-## 🚀 Getting Started: Your First Contribution
+## 2. Getting Started
 
-Contributions can range from fixing a typo in the documentation to implementing a major new feature. Unsure where to start? Look for issues tagged `good first issue` or `help wanted`.
+Before you start contributing, please ensure you have the necessary development environment set up.
 
-🔗 **[Browse Open Issues](https://github.com/chirag127/EngageFlow-AI-Social-Reply-Browser-Extension/issues)**
+### 2.1 Prerequisites
 
-### Prerequisites
+*   **Node.js:** v20 or later (check `.nvmrc` for the exact version).
+*   **npm / Yarn / pnpm:** Package manager.
+*   **Git:** For version control.
 
-Ensure you have the following installed on your local development machine:
+### 2.2 Setup
 
--   **Node.js**: `v20.x` or later (LTS recommended)
--   **pnpm**: A fast, disk space-efficient package manager. Install via `npm install -g pnpm`.
--   **Git**: For version control.
-
-### Development Environment Setup
-
-1.  **Fork the Repository**
-    Click the "Fork" button at the top-right of the [repository page](https://github.com/chirag127/EngageFlow-AI-Social-Reply-Browser-Extension) to create a copy under your own GitHub account.
-
-2.  **Clone Your Fork**
-    Clone your forked repository to your local machine:
+1.  **Fork the repository:** Click the "Fork" button on the GitHub repository page.
+2.  **Clone your fork:**
     bash
-    git clone https://github.com/YOUR_USERNAME/EngageFlow-AI-Social-Reply-Browser-Extension.git
-    cd EngageFlow-AI-Social-Reply-Browser-Extension
+    git clone https://github.com/chirag127/EngageWise-AI-Social-Media-Reply-Browser-Extension.git
+    cd EngageWise-AI-Social-Media-Reply-Browser-Extension
+    
+3.  **Install dependencies:**
+    bash
+    npm install
+    # or yarn install, or pnpm install
     
 
-3.  **Install Dependencies**
-    Install the project dependencies using `pnpm`:
+### 2.3 Branching Strategy
+
+*   All development should occur on feature branches. Do not commit directly to `main`.
+*   Branch names should be descriptive and follow the pattern: `feat/your-feature-name`, `fix/your-bug-fix`, `chore/maintenance-task`.
+
+## 3. Contribution Workflow
+
+1.  **Find an issue to work on:** You can find open issues [here](https://github.com/chirag127/EngageWise-AI-Social-Media-Reply-Browser-Extension/issues).
+2.  **Create a new branch:** Based on your issue, create a descriptive branch.
     bash
-    pnpm install
+    git checkout -b feat/add-new-platform-support
     
-
-4.  **Run the Development Server**
-    This command will build the extension and watch for file changes, rebuilding automatically:
+3.  **Make your changes:** Implement your feature or fix.
+4.  **Test your changes:** Ensure all tests pass and add new tests if necessary.
     bash
-    pnpm dev
+    npm run test
     
-
-5.  **Load the Extension in Your Browser**
-    -   Open Chrome and navigate to `chrome://extensions`.
-    -   Enable "Developer mode" (top-right toggle).
-    -   Click "Load unpacked".
-    -   Select the `dist` directory generated in the project root.
-
-## 🛠️ Development Workflow
-
-### Branching Strategy
-
-Create a new branch for every feature or fix. Use the following naming convention:
-
--   **Features**: `feature/short-description` (e.g., `feature/add-linkedin-support`)
--   **Fixes**: `fix/issue-description` (e.g., `fix/reply-button-alignment`)
--   **Documentation**: `docs/update-readme`
--   **Refactoring**: `refactor/simplify-api-service`
-
-bash
-git checkout -b feature/your-new-feature
-
-
-### Code Quality and Standards
-
-We use **Biome** for linting and formatting to maintain consistent code style. Before committing, run the following commands:
-
-bash
-# Check for linting errors
-pnpm lint
-
-# Automatically format all files
-pnpm format
-
-
-### Testing
-
-High-quality testing is mandatory. All new features must be accompanied by relevant unit or integration tests.
-
-bash
-# Run all unit and integration tests
-pnpm test
-
-
-### Commit Message Convention
-
-We enforce the [**Conventional Commits**](https://www.conventionalcommits.org/en/v1.0.0/) specification. This helps automate changelogs and provides a clear, structured commit history.
-
-**Format**: `<type>(<scope>): <subject>`
-
--   **`feat`**: A new feature.
--   **`fix`**: A bug fix.
--   **`docs`**: Documentation only changes.
--   **`style`**: Changes that do not affect the meaning of the code (white-space, formatting, etc).
--   **`refactor`**: A code change that neither fixes a bug nor adds a feature.
--   **`perf`**: A code change that improves performance.
--   **`test`**: Adding missing tests or correcting existing tests.
--   **`build`**: Changes that affect the build system or external dependencies.
--   **`ci`**: Changes to our CI configuration files and scripts.
-
-**Example:**
-`feat(ui): implement settings modal for tone adjustment`
-
-## 📦 Submitting Your Pull Request
-
-1.  **Push Your Changes**
-    Push your feature branch to your forked repository:
+5.  **Lint and format your code:**
     bash
-    git push origin feature/your-new-feature
+    npm run lint
+    npm run format
     
+6.  **Commit your changes:** Write clear and concise commit messages.
+    bash
+    git commit -m "feat: Add support for new platform XYZ"
+    
+7.  **Push your branch:**
+    bash
+    git push origin feat/add-new-platform-support
+    
+8.  **Open a Pull Request:** Go to your fork on GitHub and create a Pull Request to the `main` branch of the `chirag127/EngageWise-AI-Social-Media-Reply-Browser-Extension` repository.
 
-2.  **Create a Pull Request (PR)**
-    -   Navigate to the [original repository](https://github.com/chirag127/EngageFlow-AI-Social-Reply-Browser-Extension) and you will see a prompt to create a PR from your recently pushed branch.
-    -   Set the target branch to `main`.
-    -   Fill out the [**Pull Request Template**](./PULL_REQUEST_TEMPLATE.md) completely. Provide a clear title and a detailed description of your changes. Link any relevant issues (e.g., `Closes #123`).
+## 4. Pull Request Guidelines
 
-3.  **Code Review**
-    -   A core maintainer will review your PR.
-    -   Ensure all automated CI checks pass successfully.
-    -   Address any feedback or requested changes promptly.
-    -   Once approved, your PR will be squashed and merged into the `main` branch.
+*   **Descriptive Title and Description:** Clearly explain the purpose of your PR and the changes made.
+*   **Link to Issue:** Reference the relevant issue in your PR description (e.g., `Fixes #123`).
+*   **Code Reviews:** Be responsive to feedback from maintainers.
+*   **CI Checks:** Ensure all continuous integration checks pass before merging.
 
-Thank you for contributing to the future of intelligent social engagement!
+## 5. Development Standards & Architecture
+
+This project follows the Apex Technical Authority's standards:
+
+*   **Technology Stack:** TypeScript (Strict), Vite, TailwindCSS v4, Tauri v2. (Note: As this is a browser extension, the Tauri v2 mention might be aspirational or for a desktop wrapper. Core focus remains on web technologies.)
+*   **Linting & Formatting:** Biome (Speed) + Vitest (Unit) + Playwright (E2E).
+*   **Architecture:** Feature-Sliced Design (FSD) principles are encouraged for maintainability and scalability.
+*   **AI Integration:** Leverages AI models for context-aware reply generation. Ensure API keys are managed securely (e.g., via environment variables or secrets management) and not committed to the repository.
+*   **Principles:** Adhere to SOLID, DRY, and YAGNI principles.
+
+## 6. Reporting Issues
+
+If you find a bug or have a feature request, please open an issue on the GitHub repository.
+
+*   **Bug Reports:** Provide a clear description of the bug, steps to reproduce it, expected behavior, and actual behavior. Include relevant environment details.
+*   **Feature Requests:** Describe the feature you envision and explain why it would be beneficial.
+
+## 7. Contact
+
+If you have any questions not covered here, feel free to reach out to the maintainer(s) via GitHub Issues.
+
+Thank you for contributing!
