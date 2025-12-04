@@ -1,97 +1,59 @@
-# Contributing to EngageWise-AI-Social-Media-Reply-Browser-Extension
+# 🤝 Contributing to EngageFlow-AI-Social-Reply-Browser-Extension
 
-Thank you for considering contributing to **EngageWise-AI-Social-Media-Reply-Browser-Extension**! Your efforts help make this project better for everyone.
+We welcome contributions to enhance `EngageFlow-AI-Social-Reply-Browser-Extension`. As an Apex-standard repository, we adhere to strict architectural discipline, demanding precision, performance, and future-proofing in all submissions. 
 
-This project adheres to the Apex Technical Authority standards, emphasizing **Zero-Defect, High-Velocity, Future-Proof** development.
+By contributing, you agree that your work will be licensed under **CC BY-NC 4.0**.
 
-## 1. Code of Conduct
+## 1. Architectural Alignment (The Apex Standard)
 
-This project and its contributors are bound by the Contributor Covenant Code of Conduct. Please ensure your contributions are respectful and inclusive.
+All contributions must align with the core principles detailed in the `AGENTS.md` file. Key architectural mandates include:
 
-- [Contributor Covenant Code of Conduct v2.0](https://www.contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html)
+*   **SOLID Principles:** Ensure code demonstrates Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion.
+*   **DRY & YAGNI:** Avoid needless complexity. Code should solve the immediate problem efficiently without premature generalization.
+*   **Technology Stack:** This project is a **JavaScript/TypeScript Browser Extension**. Contributions must maintain strict TypeScript typing (`.ts`/`.tsx`) and leverage modern browser extension APIs (Manifest V3 compliance is mandatory).
+*   **Performance Focus:** Browser extension performance is critical. Minimize background processing, optimize DOM manipulation, and ensure rapid API response handling (especially for the Gemini integration).
 
-## 2. Getting Started
+## 2. Workflow: From Fork to Pull Request
 
-Before you start contributing, please ensure you have the necessary development environment set up.
+Follow these steps precisely for every contribution:
 
-### 2.1 Prerequisites
-
-*   **Node.js:** v20 or later (check `.nvmrc` for the exact version).
-*   **npm / Yarn / pnpm:** Package manager.
-*   **Git:** For version control.
-
-### 2.2 Setup
-
-1.  **Fork the repository:** Click the "Fork" button on the GitHub repository page.
-2.  **Clone your fork:**
+1.  **Fork the Repository:** Create your own fork of `chirag127/EngageFlow-AI-Social-Reply-Browser-Extension`.
+2.  **Clone Locally:** Clone your fork to your development machine.
     bash
-    git clone https://github.com/chirag127/EngageWise-AI-Social-Media-Reply-Browser-Extension.git
-    cd EngageWise-AI-Social-Media-Reply-Browser-Extension
+    git clone https://github.com/YOUR_USERNAME/EngageFlow-AI-Social-Reply-Browser-Extension.git
+    cd EngageFlow-AI-Social-Reply-Browser-Extension
     
-3.  **Install dependencies:**
+3.  **Create a Feature Branch:** Never commit directly to `main` or `develop`.
     bash
-    npm install
-    # or yarn install, or pnpm install
+    git checkout -b feature/descriptive-branch-name
     
-
-### 2.3 Branching Strategy
-
-*   All development should occur on feature branches. Do not commit directly to `main`.
-*   Branch names should be descriptive and follow the pattern: `feat/your-feature-name`, `fix/your-bug-fix`, `chore/maintenance-task`.
-
-## 3. Contribution Workflow
-
-1.  **Find an issue to work on:** You can find open issues [here](https://github.com/chirag127/EngageWise-AI-Social-Media-Reply-Browser-Extension/issues).
-2.  **Create a new branch:** Based on your issue, create a descriptive branch.
+4.  **Develop & Test:** Implement your changes. Crucially, **update or create corresponding unit/integration tests** using Vitest/Playwright.
+5.  **Lint & Format:** Before committing, ensure the codebase passes style checks.
     bash
-    git checkout -b feat/add-new-platform-support
+    npm run lint  # Use Biome/ESLint for static analysis
+    npm run format # Use Biome for formatting
     
-3.  **Make your changes:** Implement your feature or fix.
-4.  **Test your changes:** Ensure all tests pass and add new tests if necessary.
-    bash
-    npm run test
-    
-5.  **Lint and format your code:**
-    bash
-    npm run lint
-    npm run format
-    
-6.  **Commit your changes:** Write clear and concise commit messages.
-    bash
-    git commit -m "feat: Add support for new platform XYZ"
-    
-7.  **Push your branch:**
-    bash
-    git push origin feat/add-new-platform-support
-    
-8.  **Open a Pull Request:** Go to your fork on GitHub and create a Pull Request to the `main` branch of the `chirag127/EngageWise-AI-Social-Media-Reply-Browser-Extension` repository.
+6.  **Commit Atomic Changes:** Write clear, concise commit messages adhering to Conventional Commits specification.
+7.  **Push and PR:** Push your branch to your fork and open a Pull Request against `chirag127/EngageFlow-AI-Social-Reply-Browser-Extension:main`.
 
-## 4. Pull Request Guidelines
+## 3. Pull Request (PR) Requirements
 
-*   **Descriptive Title and Description:** Clearly explain the purpose of your PR and the changes made.
-*   **Link to Issue:** Reference the relevant issue in your PR description (e.g., `Fixes #123`).
-*   **Code Reviews:** Be responsive to feedback from maintainers.
-*   **CI Checks:** Ensure all continuous integration checks pass before merging.
+Every Pull Request must meet the following non-negotiable criteria:
 
-## 5. Development Standards & Architecture
+*   **PR Template Completion:** Fill out the provided `PULL_REQUEST_TEMPLATE.md` entirely.
+*   **CI/CD Success:** All checks in the `.github/workflows/ci.yml` pipeline **MUST PASS** before a maintainer will review the code.
+*   **Coverage Threshold:** Ensure no new code introduces coverage gaps. Target a minimum of **90% test coverage** for new features.
+*   **Contextual Description:** Clearly articulate *why* the change is necessary and *how* it affects the system architecture.
 
-This project follows the Apex Technical Authority's standards:
+## 4. Reporting Issues and Security Vulnerabilities
 
-*   **Technology Stack:** TypeScript (Strict), Vite, TailwindCSS v4, Tauri v2. (Note: As this is a browser extension, the Tauri v2 mention might be aspirational or for a desktop wrapper. Core focus remains on web technologies.)
-*   **Linting & Formatting:** Biome (Speed) + Vitest (Unit) + Playwright (E2E).
-*   **Architecture:** Feature-Sliced Design (FSD) principles are encouraged for maintainability and scalability.
-*   **AI Integration:** Leverages AI models for context-aware reply generation. Ensure API keys are managed securely (e.g., via environment variables or secrets management) and not committed to the repository.
-*   **Principles:** Adhere to SOLID, DRY, and YAGNI principles.
+### Bug Reports
+Use the predefined template (`.github/ISSUE_TEMPLATE/bug_report.md`) when reporting bugs. Provide clear steps to reproduce, expected vs. actual behavior, and relevant environment details (OS, Browser Version).
 
-## 6. Reporting Issues
+### Security Vulnerabilities
 
-If you find a bug or have a feature request, please open an issue on the GitHub repository.
+**DO NOT** report security vulnerabilities publicly. We adhere to a strict responsible disclosure policy. Please follow the guidelines in `.github/SECURITY.md` and contact us privately via email or GitHub Security Advisory.
 
-*   **Bug Reports:** Provide a clear description of the bug, steps to reproduce it, expected behavior, and actual behavior. Include relevant environment details.
-*   **Feature Requests:** Describe the feature you envision and explain why it would be beneficial.
+--- 
 
-## 7. Contact
-
-If you have any questions not covered here, feel free to reach out to the maintainer(s) via GitHub Issues.
-
-Thank you for contributing!
+*Thank you for investing your expertise in elevating `EngageFlow-AI-Social-Reply-Browser-Extension`.*
